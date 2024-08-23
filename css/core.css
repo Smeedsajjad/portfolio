@@ -2924,7 +2924,7 @@ h5.preloader-text {
 
 @media (max-width: 1040px) {
   h5.preloader-text {
-    font-size: 60px;
+    font-size: 36px;
   }
 }
 h5.preloader-text::after {
