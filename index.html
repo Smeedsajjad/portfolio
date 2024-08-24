@@ -16,7 +16,17 @@
           !function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
           /* ]]> */
      </script>
-     <style id="wp-emoji-styles-inline-css" type="text/css">
+       <style>
+          /* Custom styles for the iframe */
+          .modal-body iframe {
+            width: 100%;
+            border: none;
+            height: 960px;
+          }
+        </style>
+     <style
+     
+     id="wp-emoji-styles-inline-css" type="text/css">
           img.wp-smiley,
           img.emoji {
                display: inline !important;
@@ -1811,56 +1821,39 @@
                               </div>
 
                          </div>
-                         <div class="contact_form_2">
+                         <!-- Button to trigger the modal -->
+                         <div class="container mt-5" style="display: flex;justify-content: center;">
+                         <button type="button" class="btn common_btn" data-toggle="modal" data-target="#formModal" >
+                         Contact Us
+                         </button>
+                         </div>
 
-                              <div class="wpcf7 no-js" id="wpcf7-f115-o1" lang="en-US" dir="ltr">
-                                   <div class="screen-reader-response">
-                                        <p role="status" aria-live="polite" aria-atomic="true"></p>
-                                        <ul></ul>
-                                   </div>
-                                   <form action="./contact.php" method="post" class="wpcf7-form init" aria-label="Contact form"
-                                        novalidate="novalidate" data-status="init">
-                                        <div class="row">
-                                             <div class="col-xl-6">
-                                                  <span class="wpcf7-form-control-wrap"  data-name="your-name"><input
-                                                            size="40"
-                                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                            autocomplete="name" aria-required="true"
-                                                            aria-invalid="false" placeholder="Your Name" value=""
-                                                            type="text" name="your-name"></span>
-                                             </div>
-                                             <div class="col-xl-6">
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-email"><input
-                                                            size="40"
-                                                            class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
-                                                            autocomplete="email" aria-required="true"
-                                                            aria-invalid="false" placeholder="Your Email" value=""
-                                                            type="email" name="your-email"></span>
-                                             </div>
-                                             <div class="col-xl-6">
-                                                  <span class="wpcf7-form-control-wrap" data-name="your-phone"><input
-                                                            size="40"
-                                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                            autocomplete="phone" aria-required="true"
-                                                            aria-invalid="false" placeholder="Phone Number" value=""
-                                                            type="text" name="your-phone"></span>
-                                             </div>
-                                             <div class="col-xl-12">
-                                                  <span class="wpcf7-form-control-wrap"
-                                                       data-name="your-subject"><textarea cols="10" rows="5"
-                                                            class="wpcf7-form-control wpcf7-textarea"
-                                                            aria-invalid="false" placeholder="Message"
-                                                            name="your-subject"></textarea></span>
-                                                  <input class="wpcf7-form-control wpcf7-submit has-spinner common_btn"
-                                                       type="submit" value="submit now">
-                                             </div>
-
-                                        </div>
-                                        <div class="wpcf7-response-output" aria-hidden="true"></div>
-                                   </form>
+                         <!-- Modal -->
+                         <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+                         <div class="modal-dialog modal-lg" role="document">
+                         <div class="modal-content">
+                              <div class="modal-header">
+                              <h5 class="modal-title" id="formModalLabel">Google Form</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                              </button>
+                              </div>
+                              <div class="modal-body">
+                              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUbO4YMfBVt8R4Vhexz1f3Y2iq_25xudqlB4EYLQac8j2-ZQ/viewform?embedded=true" 
+                                        frameborder="0" 
+                                        marginheight="0"
+                                        
+                                        marginwidth="0">
+                                   Loading…
+                              </iframe>
+                              </div>
+                              <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                               </div>
                          </div>
-                    </div>
+                         </div>
+                         </div>
+                            </div>
                </section>
                <div class="footer_2_copyright_area mt_120 xs_mt_80">
                     <div class="container">
@@ -1897,31 +1890,26 @@
           </div>
      </div>
      </div>
-     <script>
-         fetch('./contact.php', {
-    method: 'POST',
-    body: formData,
-})
-.then(response => response.text())  // Change to text() to see raw response
-.then(text => {
-    console.log('Response text:', text);
-    return JSON.parse(text);
-})
-.then(data => {
-    if (data.status === 'success') {
-        alert(data.message);
-        form.reset();
-    } else {
-        alert(data.message);
+<!-- jQuery and Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Contact Form 7 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wpcf7/5.4.2/scripts.js"></script>
+
+<!-- Custom Script for Success Message -->
+<script>
+  document.addEventListener('wpcf7mailsent', function(event) {
+    var modal = $('#formModal');
+    var successMessage = $('#successMessage');
+    if (modal.length) {
+      modal.modal('hide');
+      successMessage.show();
     }
-})
-.catch(error => {
-    console.error('Error:', error);
-    alert('There was an error with your request.');
-});
+  }, false);
+</script>
 
-
-     </script>
      <script type="text/javascript" src="js/index.js" id="swv-js"></script>
      <script type="text/javascript" src="js/index_1.js" id="contact-form-7-js"></script>
      <script type="text/javascript" src="js/plugin.js" id="plugin-js"></script>

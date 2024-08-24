@@ -166,3 +166,9 @@ form.submitting .wpcf7-spinner {
 .wpcf7-reflection > output[hidden] {
 	display: none;
 }
+@-moz-document domain("docs.google.com") {
+	.Dq4amc {
+	  display: none !important;
+	}
+  }
+  
